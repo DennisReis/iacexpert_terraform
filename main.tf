@@ -5,8 +5,9 @@ provider "aws" {
 
 terraform {
   backend "s3" {
-    bucket = "dmprlab-tfstates-terraform"
-    key    = "terraform-test.tfstate"
-    region = "us-east-1"
+    bucket         = "dmprlab-tfstates-terraform"
+    key            = "terraform-test.tfstate"
+    dynamodb_table = "terraform-state-lock-dynamo"
+    region         = "us-east-1"
   }
 }
