@@ -10,9 +10,10 @@ data "aws_ami" "ubuntu" {
 }
 
 resource "aws_instance" "web" {
-    count         = 2
+    count         = var.servers
     ami           = data.aws_ami.ubuntu.id
     instance_type = "t2.micro"
+    key_name      = "container-expert"
 
     tags = {
         Name     = "HelloWorld"
