@@ -9,5 +9,6 @@ terraform {
     key            = "terraform-test.tfstate"
     dynamodb_table = "terraform-state-lock-dynamo"
     region         = "us-east-1"
+    encrypt        = true
   }
 }
