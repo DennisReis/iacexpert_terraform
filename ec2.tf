@@ -32,7 +32,7 @@ resource "aws_instance" "web" {
 
   tags = {
     Name       = "HelloWorld ${var.name}"
-    AnotherTag = "HelloWorld %{if var.name != "Dennis"}${var.name}%{else}unnamed%{endif}!"
+    AnotherTag = "HelloWorld %{if var.name == "Dennis"}${var.name}%{else}unnamed%{endif}!"
     Training   = "linuxtips"
     Subject    = "terraform"
     Env        = var.environment
